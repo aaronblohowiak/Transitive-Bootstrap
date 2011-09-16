@@ -1,0 +1,49 @@
+!!!
+%html
+  %head
+  %link(rel="stylesheet" href="/app.css?#{q}" media="all")
+  %script{src: "/transitive.js?#{q}"}
+  %script{src: "/templates.js?#{q}"}
+  :script
+    Transitive = require("./transitive");
+    Transitive.Views.templates = require("./templates.js");
+    if(window.console){}else{
+      console = {};
+      console.log = function(){}
+    }
+  %title
+    Change the title in layout.haml
+  %body
+    %div( class="topbar")
+      %div( class="fill")
+        %div( class="container")
+          %h3
+            %a(href="#" style="letter-spacing:3px;")
+              X
+          %ul
+            %li
+              %a(href="/") Home
+            :if this.crumbs
+              :each idx in this.crumbs
+                %li
+                  %a.skinny
+                    >
+                %li
+                  %a(href="#masthead")= idx
+          %ul.secondary-nav
+            %li
+              %form
+                %input.search
+            %li.dropdown(style="margin-left:10px")
+              %a.dropdown-toggle(href="#toggle") Account
+              %ul.dropdown-menu
+                %li
+                  %a(href="#") secondary-link
+
+
+    %div(style="margin-top:40px")
+    .container
+      != content
+    :script
+      !{etc}
+      Transitive.boot();

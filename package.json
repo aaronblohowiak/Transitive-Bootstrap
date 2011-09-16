@@ -1,0 +1,19 @@
+{
+  "name": "project-name",
+  "version": "0.0.0",
+  "devDependencies": {
+    "restartr": ""
+  },
+  "dependencies": {
+    "transitive": "0.0.0pre28",
+    "haml": "0.4.2",
+    "underscore": "1.1.6",
+    "markdown": "0.2.1",
+    "hiredis": "~0.1.12",
+    "redis": "~0.6.7",
+    "uuid-pure": "~1.0.10",
+    "formidable": "~1.0.3",
+    "restartr": "~0.1.10",
+    "less": "~1.1.4"
+  }
+}

@@ -1,0 +1,24 @@
+-
+  this.crumbs = ["Some", "Crumbs", "Rock"]
+
+.row
+  .span4
+    %h2 Left Navigation
+    #target
+  .span12
+    .page-header
+      %h1><
+        Transitive-Bootstrap
+        %small>< A skeleton
+          %a(href="http://transitive.io")>< Transitive
+          project.
+      
+    %h1 This is the home.
+    != this.render("onThe", {place: "server"})
+
+
+
+:javascript
+  $(function(){
+    $("#target").html(Transitive.Views.render("onThe", {place: "browser"}));
+  })
